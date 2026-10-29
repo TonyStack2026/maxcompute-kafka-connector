@@ -21,7 +21,7 @@ import org.junit.Test;
  *
  * <p>这条判据值得单独钉：一个窗口里只要真放过记录就必须落盘，开关也不能把它吞掉；
  * 反过来，开关打开时省掉的必须是"什么都没有"的那种往返——真服务端实测那种往返每分区 2.4-2.7 秒，
- * 而 preCommit 是逐分区串行的（数据见工作项 evidence 的 C/D 段）。
+ * 而 preCommit 是逐分区串行的（实测读数见本 PR 正文的表格）。
  */
 public class BufferedWriterEmptyWindowFlushTest {
 

@@ -163,7 +163,7 @@ public class BufferedWriter {
      *
      * <p>单独抽成方法是为了让这条判据能被纯单测驱动：注入 tunnel 的构造在 PR #19 里，本仓主干上
      * {@code BufferedWriter} 只能连真 tunnel，所以判据本身先核清楚，网络效果的证据由真服务端跑具给
-     * （见工作区 evidence/harness/run-budget-probe.sh 的 C/D 段）。
+     * （真服务端与 worker 级的实测读数见本 PR 正文的测量表与 PR 评论）。
      */
     boolean skipEmptyThisWindow(long flushedRecords, long bytesInPack) {
         return skipEmptyFlush && flushedRecords == 0 && bytesInPack == 0;
